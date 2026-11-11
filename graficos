@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd 
+
+df = pd.read_csv(r"C:\Users\ssilva.thais\OneDrive - SENAC RIO\DADOS\funcionarios - Null (1).csv")
+
+df_lucro = df[df["lucro"] > 0 ]
+
+xpoints = df_lucro["nome"]
+ypoints = df_lucro["lucro"]
+
+bars = plt.barh(xpoints, ypoints)
+
+plt.bar_label(bars, fmt="%.2f", padding=3)
+
+
+plt.title("grafico")
+plt.xlabel("plano X")
+plt.ylabel("plano Y")
+
+plt.show()
